@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правило Narzędnik в польском языке</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            backdrop-filter: blur(15px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, #f093fb, #f5576c, #4facfe);
+            border-radius: 3px;
+            animation: rainbow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .main-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1) drop-shadow(0 0 5px rgba(240, 147, 251, 0.3)); }
+            to { filter: brightness(1.3) drop-shadow(0 0 20px rgba(240, 147, 251, 0.6)); }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .main-rule {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 6px solid #f093fb;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .rule-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .rule-content {
+            font-size: 1.4em;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .gender-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .gender-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gender-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .gender-card:hover::before {
+            left: 100%;
+        }
+
+        .gender-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .masculine {
+            border-top-color: #00b894;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+        }
+
+        .feminine {
+            border-top-color: #e84393;
+            background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);
+            color: white;
+        }
+
+        .neutral {
+            border-top-color: #6c5ce7;
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            color: white;
+        }
+
+        .gender-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .gender-rules {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .usage-section {
+            margin: 40px 0;
+        }
+
+        .usage-card {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(253, 121, 168, 0.4);
+        }
+
+        .usage-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .usage-content {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .usage-item {
+            margin: 18px 0;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .usage-item:last-child {
+            border-bottom: none;
+        }
+
+        .usage-examples {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .mini-example {
+            margin: 10px 0;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .verbs-section {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 35px 0;
+            color: white;
+        }
+
+        .verbs-title {
+            font-size: 2.1em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .verbs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .verb-category {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .verb-category:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .verb-cat-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .verb-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .verb-item {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2d3436;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+
+        .verb-item:hover {
+            background: white;
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-left-color: #6c5ce7;
+        }
+
+        .verb-meaning {
+            color: #636e72;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .prepositions-section {
+            background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 35px 0;
+            color: white;
+        }
+
+        .prep-title {
+            font-size: 2.1em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 35px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .prep-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .prep-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .prep-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .prep-word {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .prep-meaning {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .prep-examples {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .prep-example {
+            margin: 6px 0;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        .examples {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            padding: 35px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .examples-title {
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .example-category {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 6px solid;
+        }
+
+        .example-category:nth-child(2) {
+            border-left-color: #00b894;
+        }
+
+        .example-category:nth-child(3) {
+            border-left-color: #e84393;
+        }
+
+        .example-category:nth-child(4) {
+            border-left-color: #6c5ce7;
+        }
+
+        .example-category:nth-child(5) {
+            border-left-color: #fdcb6e;
+        }
+
+        .category-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: #2d3436;
+        }
+
+        .example-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 18px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            border-left: 3px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .example-item:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">NARZĘDNIK</h1>
+            <p class="subtitle">Творительный падеж в польском языке</p>
+        </div>
+
+        <div class="main-rule">
+            <h2 class="rule-title">🛠️ ГЛАВНОЕ ПРАВИЛО</h2>
+            <div class="rule-content">
+                <strong>Мужской род:</strong> <span class="highlight">-ym/-im</span> (прил.) + <span class="highlight">-em/-iem</span> (сущ.)
+                <br>
+                <strong>Женский род:</strong> <span class="highlight">-ą/-ią</span> (прил.) + <span class="highlight">-ą/-ią</span> (сущ.)
+                <br>
+                <strong>Средний род:</strong> <span class="highlight">-ym/-im</span> (прил.) + <span class="highlight">-em/-iem</span> (сущ.)
+            </div>
+        </div>
+
+        <div class="gender-section">
+            <div class="gender-card masculine">
+                <span class="icon">👨</span>
+                <h3 class="gender-title">МУЖСКОЙ РОД</h3>
+                <div class="gender-rules">
+                    <strong>Прилагательные:</strong> <span class="highlight">-ym/-im</span><br>
+                    <strong>Существительные:</strong> <span class="highlight">-em/-iem</span><br><br>
+                    <strong>Примеры:</strong><br>
+                    dobr<strong>y</strong> chłopiec → dobr<strong>ym</strong> chłopc<strong>em</strong><br>
+                    mił<strong>y</strong> kot → mił<strong>ym</strong> kot<strong>em</strong><br>
+                    polsk<strong>i</strong> język → polsk<strong>im</strong> język<strong>iem</strong>
+                </div>
+            </div>
+
+            <div class="gender-card feminine">
+                <span class="icon">👩</span>
+                <h3 class="gender-title">ЖЕНСКИЙ РОД</h3>
+                <div class="gender-rules">
+                    <strong>Прилагательные:</strong> <span class="highlight">-ą/-ią</span><br>
+                    <strong>Существительные:</strong> <span class="highlight">-ą/-ią</span><br><br>
+                    <strong>Примеры:</strong><br>
+                    dobr<strong>a</strong> dziewczyn<strong>a</strong> → dobr<strong>ą</strong> dziewczyn<strong>ą</strong><br>
+                    mił<strong>a</strong> babci<strong>a</strong> → mił<strong>ą</strong> babci<strong>ą</strong><br>
+                    polsk<strong>a</strong> książk<strong>a</strong> → polsk<strong>ą</strong> książk<strong>ą</strong>
+                </div>
+            </div>
+
+            <div class="gender-card neutral">
+                <span class="icon">📦</span>
+                <h3 class="gender-title">СРЕДНИЙ РОД</h3>
+                <div class="gender-rules">
+                    <strong>Прилагательные:</strong> <span class="highlight">-ym/-im</span><br>
+                    <strong>Существительные:</strong> <span class="highlight">-em/-iem</span><br><br>
+                    <strong>Примеры:</strong><br>
+                    dobr<strong>e</strong> dziecko → dobr<strong>ym</strong> dziecko<strong>em</strong><br>
+                    mał<strong>e</strong> okno → mał<strong>ym</strong> okn<strong>em</strong><br>
+                    polsk<strong>ie</strong> słowo → polsk<strong>im</strong> słow<strong>em</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-section">
+            <div class="usage-card">
+                <h3 class="usage-title">🎯 КОГДА ИСПОЛЬЗУЕТСЯ NARZĘDNIK</h3>
+                <div class="usage-content">
+                    <div class="usage-item">
+                        <strong>🔧 Инструмент действия:</strong> Отвечает на вопросы <em>czym?</em> (чем?)
+                    </div>
+                    <div class="usage-item">
+                        <strong>🚶 С предлогами движения:</strong> z, między, nad, pod, przed, za
+                    </div>
+                    <div class="usage-item">
+                        <strong>👥 Совместность:</strong> "вместе с кем-то/чем-то"
+                    </div>
+                    <div class="usage-item">
+                        <strong>🎭 Роль, профессия:</strong> быть кем-то, работать кем-то
+                    </div>
+                    <div class="usage-item">
+                        <strong>⏰ Время:</strong> утром, вечером, зимой
+                    </div>
+                    <div class="usage-examples">
+                        <div class="mini-example">Piszę <span class="highlight">długopisem</span> - пишу ручкой</div>
+                        <div class="mini-example">Idę <span class="highlight">z przyjacielem</span> - иду с другом</div>
+                        <div class="mini-example">Jestem <span class="highlight">nauczycielem</span> - я учитель</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prepositions-section">
+            <h3 class="prep-title">📍 ПРЕДЛОГИ + NARZĘDNIK</h3>
+            <div class="prep-grid">
+                <div class="prep-card">
+                    <div class="prep-word">Z</div>
+                    <div class="prep-meaning">с, вместе с</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">z przyjacielem - с другом</div>
+                        <div class="prep-example">z mamą - с мамой</div>
+                        <div class="prep-example">z dziećmi - с детьми</div>
+                    </div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-word">MIĘDZY</div>
+                    <div class="prep-meaning">между</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">między domami - между домами</div>
+                        <div class="prep-example">między nami - между нами</div>
+                    </div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-word">NAD</div>
+                    <div class="prep-meaning">над</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">nad morzem - над морем</div>
+                        <div class="prep-example">nad stołem - над столом</div>
+                    </div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-word">POD</div>
+                    <div class="prep-meaning">под</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">pod stołem - под столом</div>
+                        <div class="prep-example">pod domem - под домом</div>
+                    </div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-word">PRZED</div>
+                    <div class="prep-meaning">перед</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">przed domem - перед домом</div>
+                        <div class="prep-example">przed szkołą - перед школой</div>
+                    </div>
+                </div>
+                <div class="prep-card">
+                    <div class="prep-word">ZA</div>
+                    <div class="prep-meaning">за</div>
+                    <div class="prep-examples">
+                        <div class="prep-example">za domem - за домом</div>
+                        <div class="prep-example">za mną - за мной</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="verbs-section">
+            <h3 class="verbs-title">🎯 ГЛАГОЛЫ + NARZĘDNIK</h3>
+            <div class="verbs-grid">
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">🎭 БЫТЬ КЕМ-ТО</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">być <span class="verb-meaning">(быть)</span></div>
+                        <div class="verb-item">zostać <span class="verb-meaning">(стать)</span></div>
+                        <div class="verb-item">pracować <span class="verb-meaning">(работать)</span></div>
+                        <div class="verb-item">służyć <span class="verb-meaning">(служить)</span></div>
+                    </div>
+                </div>
+
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">🔧 ДЕЙСТВИЕ ИНСТРУМЕНТОМ</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">pisać <span class="verb-meaning">(писать чем-то)</span></div>
+                        <div class="verb-item">rysować <span class="verb-meaning">(рисовать чем-то)</span></div>
+                        <div class="verb-item">ciąć <span class="verb-meaning">(резать чем-то)</span></div>
+                        <div class="verb-item">bić <span class="verb-meaning">(бить чем-то)</span></div>
+                    </div>
+                </div>
+
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">🚶 ДВИЖЕНИЕ/ПЕРЕМЕЩЕНИЕ</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">iść <span class="verb-meaning">(идти с кем-то)</span></div>
+                        <div class="verb-item">jechać <span class="verb-meaning">(ехать чем-то)</span></div>
+                        <div class="verb-item">lecieć <span class="verb-meaning">(лететь чем-то)</span></div>
+                        <div class="verb-item">podróżować <span class="verb-meaning">(путешествовать)</span></div>
+                    </div>
+                </div>
+
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">🤝 УПРАВЛЕНИЕ/КОНТРОЛЬ</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">kierować <span class="verb-meaning">(управлять)</span></div>
+                        <div class="verb-item">rządzić <span class="verb-meaning">(править)</span></div>
+                        <div class="verb-item">dowodzić <span class="verb-meaning">(командовать)</span></div>
+                        <div class="verb-item">sterować <span class="verb-meaning">(управлять)</span></div>
+                    </div>
+                </div>
+
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">😊 ЭМОЦИИ/СОСТОЯНИЯ</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">cieszyć się <span class="verb-meaning">(радоваться)</span></div>
+                        <div class="verb-item">martwić się <span class="verb-meaning">(беспокоиться)</span></div>
+                        <div class="verb-item">interesować się <span class="verb-meaning">(интересоваться)</span></div>
+                        <div class="verb-item">zajmować się <span class="verb-meaning">(заниматься)</span></div>
+                    </div>
+                </div>
+
+                <div class="verb-category">
+                    <h4 class="verb-cat-title">🍽️ УГОЩЕНИЕ/ОБМЕН</h4>
+                    <div class="verb-list">
+                        <div class="verb-item">częstować <span class="verb-meaning">(угощать)</span></div>
+                        <div class="verb-item">dzielić się <span class="verb-meaning">(делиться)</span></div>
+                        <div class="verb-item">wymieniać się <span class="verb-meaning">(обмениваться)</span></div>
+                        <div class="verb-item">handlować <span class="verb-meaning">(торговать)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h3 class="examples-title">📝 ПРИМЕРЫ ПО КАТЕГОРИЯМ</h3>
+            
+            <div class="example-category">
+                <h4 class="category-title">🔧 ИНСТРУМЕНТ ДЕЙСТВИЯ</h4>
+                <div class="example-item">
+                    <strong>Gotuję</strong> <span class="highlight">ostrym nożem</span> - готовлю острым ножом
+                </div>
+                <div class="example-item">
+                    <strong>Maluję</strong> <span class="highlight">czerwonym pędzlem</span> - крашу красной кистью
+                </div>
+                <div class="example-item">
+                    <strong>Jem</strong> <span class="highlight">srebrną łyżką</span> - ем серебряной ложкой
+                </div>
+            </div>
+
+            <div class="example-category">
+                <h4 class="category-title">👥 СОВМЕСТНОСТЬ</h4>
+                <div class="example-item">
+                    <strong>Rozmawiam</strong> <span class="highlight">z mądrym nauczycielem</span> - разговариваю с умным учителем
+                </div>
+                <div class="example-item">
+                    <strong>Tańczę</strong> <span class="highlight">z piękną dziewczyną</span> - танцую с красивой девушкой
+                </div>
+                <div class="example-item">
+                    <strong>Pracuję</strong> <span class="highlight">z dobrym zespołem</span> - работаю с хорошей командой
+                </div>
+            </div>
+
+            <div class="example-category">
+                <h4 class="category-title">🎭 ПРОФЕССИЯ/РОЛЬ</h4>
+                <div class="example-item">
+                    <strong>Jestem</strong> <span class="highlight">młodym lekarzem</span> - я молодой врач
+                </div>
+                <div class="example-item">
+                    <strong>Pracuję</strong> <span class="highlight">doświadczonym programistą</span> - работаю опытным программистом
+                </div>
+                <div class="example-item">
+                    <strong>Zostanę</strong> <span class="highlight">dobrym nauczycielem</span> - стану хорошим учителем
+                </div>
